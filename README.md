@@ -7,6 +7,7 @@ A spike around generating pdf content using golang
 
 ## Packages
 * [Template](#template)
+* [Ordinal](#ordinal)
 ### Template
 This package uses an adapted pattern from the Template design pattern.
 
@@ -20,6 +21,16 @@ code for each derived class and instead only the different template can define t
 
 Golang doesn't have the normal inheritance support from more mature OOP languages so we attempt to accomplish this
 by using composition.
+
+### Ordinal
+This package is used to format numbers into their ordinal date format (1st, 2nd, 3rd, 4th...)
+
+Example Usage:
+
+```
+a := Ordinalize(11)
+fmt.Println(a) // 11th
+```
 
 ## Generated PDF
 
