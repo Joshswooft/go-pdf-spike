@@ -49,11 +49,11 @@ func NewReceiptTemplate() *ReceiptTemplate {
 	}
 }
 
-func (b *ReceiptTemplate) setPageMargins() {
+func (b *ReceiptTemplate) SetPageMargins() {
 	b.Template.Pdf.SetPageMargins(20, 10, 20)
 }
 
-func (b *ReceiptTemplate) buildHeading() {
+func (b *ReceiptTemplate) BuildHeading() {
 	b.Template.Pdf.RegisterHeader(func() {
 		b.Template.Pdf.Row(50, func() {
 			b.Template.Pdf.ColSpace(10)
@@ -89,14 +89,14 @@ func (b *ReceiptTemplate) buildHeading() {
 	})
 }
 
-func (b *ReceiptTemplate) buildMainSection() {
+func (b *ReceiptTemplate) BuildMainSection() {
 	b.buildTitle()
 	b.buildAppointmentSection()
 	b.buildPaymentSection()
 	b.buildQuestionSection()
 }
 
-func (b *ReceiptTemplate) buildFooter() {
+func (b *ReceiptTemplate) BuildFooter() {
 	b.Template.Pdf.RegisterFooter(func() {
 		b.Template.Pdf.Row(10, func() {
 			b.Template.Pdf.Col(12, func() {

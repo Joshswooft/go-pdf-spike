@@ -23,10 +23,10 @@ import (
 )
 
 type iTemplate interface {
-	setPageMargins()
-	buildHeading()
-	buildMainSection()
-	buildFooter()
+	SetPageMargins()
+	BuildHeading()
+	BuildMainSection()
+	BuildFooter()
 }
 
 type Template struct {
@@ -43,19 +43,19 @@ func (t *Template) Save() {
 	fmt.Println("PDF saved successfully")
 }
 
-func (t *Template) setPageMargins() {
+func (t *Template) SetPageMargins() {
 	fmt.Println("Base class calls setPageMargins()")
 }
 
-func (t *Template) buildHeading() {
+func (t *Template) BuildHeading() {
 	fmt.Println("Base class calls buildHeading()")
 }
 
-func (t *Template) buildMainSection() {
+func (t *Template) BuildMainSection() {
 	fmt.Println("Base class calls buildMainSection()")
 }
 
-func (t *Template) buildFooter() {
+func (t *Template) BuildFooter() {
 	fmt.Println("Base class calls buildFooter()")
 }
 
@@ -65,15 +65,15 @@ The implementation for this is handled by the specific template
 but if the implementation is not handled in the derived class then the base method is used instead
 */
 func (t *Template) Generate() {
-	t.setPageMargins()
-	t.buildHeading()
-	t.buildMainSection()
-	t.buildFooter()
+	t.SetPageMargins()
+	t.BuildHeading()
+	t.BuildMainSection()
+	t.BuildFooter()
 }
 
 func Generate(t iTemplate) {
-	t.setPageMargins()
-	t.buildHeading()
-	t.buildMainSection()
-	t.buildFooter()
+	t.SetPageMargins()
+	t.BuildHeading()
+	t.BuildMainSection()
+	t.BuildFooter()
 }
