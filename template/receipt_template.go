@@ -32,7 +32,7 @@ type PaymentDetails struct {
 }
 
 type ReceiptTemplate struct {
-	*Template
+	Template
 	LogoPath        string
 	LetterAddress   LetterAddress
 	AppointmentDate time.Time
@@ -45,7 +45,7 @@ type ReceiptTemplate struct {
 
 func NewReceiptTemplate() *ReceiptTemplate {
 	return &ReceiptTemplate{
-		Template: &Template{Pdf: pdf.NewMaroto(consts.Portrait, consts.A4), ITmpl: nil},
+		Template: Template{Pdf: pdf.NewMaroto(consts.Portrait, consts.A4)},
 	}
 }
 

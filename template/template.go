@@ -30,8 +30,7 @@ type iTemplate interface {
 }
 
 type Template struct {
-	ITmpl iTemplate
-	Pdf   pdf.Maroto
+	Pdf pdf.Maroto
 }
 
 func (t *Template) Save() {
@@ -66,8 +65,15 @@ The implementation for this is handled by the specific template
 but if the implementation is not handled in the derived class then the base method is used instead
 */
 func (t *Template) Generate() {
-	t.ITmpl.setPageMargins()
-	t.ITmpl.buildHeading()
-	t.ITmpl.buildMainSection()
-	t.ITmpl.buildFooter()
+	t.setPageMargins()
+	t.buildHeading()
+	t.buildMainSection()
+	t.buildFooter()
+}
+
+func Generate(t iTemplate) {
+	t.setPageMargins()
+	t.buildHeading()
+	t.buildMainSection()
+	t.buildFooter()
 }
